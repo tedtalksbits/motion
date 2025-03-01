@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { ThemeProvider } from 'next-themes';
 import ReactQueryProvider from '@/providers/react-query-provider';
 
-const font = Lexend({
+const font = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800', '900'],
 });

@@ -5,6 +5,33 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+div.bn-editor.ProseMirror {
+  @apply bg-background text-foreground;
+}
+
+.bn-editor.ProseMirror {
+  @apply bg-background text-foreground;
+}
+
+.bn-block-group table {
+  @apply border-collapse border-spacing-0 border-border;
+}
+.bn-block-group table th {
+  @apply border-b border-border;
+}
+.bn-block-group table th,
+.bn-block-group table td {
+  @apply p-2;
+}
+.bn-block-group table th {
+  @apply bg-card text-card-foreground;
+}
+table {
+  @apply border-collapse border-spacing-0;
+}
+table th {
+  @apply border-b border-border;
+}
 
 @layer utilities {
   .text-balance {
@@ -33,10 +60,18 @@ body {
     --destructive-foreground: 210 40% 98%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring:204 87% 50%
+    --ring: 204 87% 50%;
     --status-online: 142 71% 45%;
     --status-away: 38 92% 50%;
     --status-busy: 0 84% 60%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -44,7 +79,7 @@ body {
     --foreground: 210 40% 98%;
     --card: 240 3% 12%;
     --card-foreground: 210 40% 98%;
-    --popover: 240 3% 11%;
+    --popover: 240 3% 12.5%;
     --popover-foreground: 210 40% 98%;
     --primary: 204 87% 50%;
     --primary-foreground: 210 40% 98%;
@@ -58,7 +93,15 @@ body {
     --destructive-foreground: 210 40% 98%;
     --border: 240 5% 23%;
     --input: 240 5% 23%;
-    --ring:204 87% 50%;
+    --ring: 204 87% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -119,18 +162,30 @@ body {
   }
 } */
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
 @layer components {
   .required:after {
     content: ' *';
     color: hsl(var(--destructive));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr min(99ch, 100%) 1fr;
+  }
+  .wrapper > * {
+    grid-column: 2;
+  }
+  .full-bleed {
+    width: 100%;
+    grid-column: 1 / 4;
   }
 }

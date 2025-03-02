@@ -31,7 +31,7 @@ const defaultIcons = [
     icon: Database,
     color: 'bg-primary/20',
     textColor: 'text-primary/50',
-    position: 'right-[5%] top-[15%]',
+    position: `right-[5%] top-[15%]`,
   },
   {
     icon: Users,

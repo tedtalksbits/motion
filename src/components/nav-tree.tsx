@@ -35,9 +35,12 @@ import {
   useCreateDocument,
   useUpdateDocument,
 } from '@/features/documents/hooks/useDocuments';
+import usePath from '@/features/documents/hooks/usePath';
 
 export function Tree({ doc }: { doc: MotionDocument }) {
   const router = useRouter();
+  const { isActive } = usePath();
+  const isDocActive = isActive(doc.id);
   if (!doc?.children?.length) {
     return (
       <SidebarMenuButton
@@ -47,8 +50,14 @@ export function Tree({ doc }: { doc: MotionDocument }) {
         isActive={false}
         className='data-[active=true]:bg-transparent group/menu-button'
       >
-        <File />
-        <TreeTitle>{doc.title}</TreeTitle>
+        {doc.icon ? <span>{doc.icon}</span> : <File />}
+        <TreeTitle
+          className={cn({
+            'text-primary': isDocActive,
+          })}
+        >
+          {doc.title}
+        </TreeTitle>
         {/* when hover show action buttons */}
         <TreeActions>
           <TreeActionItem
@@ -89,8 +98,14 @@ export function Tree({ doc }: { doc: MotionDocument }) {
               <ChevronRight className='size-4' />
             </TreeActionItem>
           </CollapsibleTrigger>
-          <FileText />
-          <TreeTitle>{doc.title}</TreeTitle>
+          {doc.icon ? <span>{doc.icon}</span> : <FileText />}
+          <TreeTitle
+            className={cn({
+              'text-primary': isDocActive,
+            })}
+          >
+            {doc.title}
+          </TreeTitle>
           <TreeActions>
             <TreeActionItem
               onClick={(e) => {

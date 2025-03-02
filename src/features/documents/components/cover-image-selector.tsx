@@ -71,12 +71,19 @@ function CoverImageSelector({
     'linear-gradient(to bottom, #06b6d4, #a5f3fc)', // cyan gradient
     '#ec4899', // pink
     '#ef4444', // orange-red
-    'linear-gradient(to bottom, #e0f2fe, #ffffff)', // light blue gradient
+    'linear-gradient(to bottom, #0099ff, #ffffff)', // light blue gradient
     'linear-gradient(to bottom, #f472b6, #ef4444)', // pink to red
     'linear-gradient(to bottom, #a855f7, #ec4899)', // purple to pink
     'linear-gradient(to bottom, #0ea5e9, #a5f3fc)', // blue to cyan
+    'linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)',
+    'linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%)',
+    'linear-gradient(to right, #1e9600, #fff200, #ff0000)',
+    'linear-gradient(90deg, #A100FFFF 0%, #71C4FFFF 100%)',
+    'linear-gradient(to right, #f12711, #f5af19)',
+    'linear-gradient(to right, #fc5c7d, #6a82fb)',
+    'linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9)',
+    'linear-gradient(120deg, #fccb90 0%, #d57eeb 100%)',
   ];
-
   return (
     <Tabs defaultValue='gallery'>
       <TabsList className='grid grid-cols-4'>

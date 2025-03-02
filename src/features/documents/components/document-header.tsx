@@ -189,7 +189,7 @@ export function DocumentHeader({ document, className }: NotionHeaderProps) {
       </div>
 
       {/* Icon and Title Row */}
-      <div className='px-4 py-6 flex items-center gap-2'>
+      <div className='px-4 py-6 flex items-center gap-2 absolute'>
         <Popover>
           <PopoverTrigger asChild>
             {icon ? (

@@ -46,7 +46,7 @@ export const DocumentTitle = ({
     <h1
       contentEditable
       suppressContentEditableWarning
-      className='text-2xl my-8 block font-bold text-foreground whitespace-pre-wrap break-words caret-foreground w-full outline-none ring-0 focus:ring-0 focus:outline-none'
+      className='text-4xl block font-bold text-foreground whitespace-pre-wrap break-words caret-foreground w-full outline-none ring-0 focus:ring-0 focus:outline-none'
       spellCheck
       onInput={handleInput}
       onKeyDown={handleKeyDown}

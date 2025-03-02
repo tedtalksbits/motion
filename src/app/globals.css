@@ -189,3 +189,52 @@ table th {
     grid-column: 1 / 4;
   }
 }
+
+@layer utilities {
+  /*
+    ========================================
+    srollbar reset
+    ========================================
+  */
+  *::-webkit-scrollbar {
+    @apply w-1 h-1 bg-transparent opacity-10 hover:opacity-100;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-background/10 rounded-full border-none outline-none transition-colors duration-300 opacity-10 hover:opacity-100;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-foreground/10 rounded-full transition-colors duration-300;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-foreground/30;
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    @apply bg-foreground/50;
+  }
+
+  *::-webkit-scrollbar-corner {
+    @apply bg-background/0 rounded-full border-none outline-none transition-colors duration-300 opacity-0 hover:opacity-100;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar {
+    --ms-overflow-style: unset;
+    scrollbar-width: unset;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    display: block;
+  }
+}

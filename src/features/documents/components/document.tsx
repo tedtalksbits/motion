@@ -28,7 +28,7 @@ export const DocumentViewer = ({ id }: { id: string }) => {
   return (
     <>
       <DocumentHeader document={document} />
-      <div className='p-8'>
+      <div className='px-8 pt-20 pb-8'>
         <DocumentTitle
           document={document}
           onChange={(title) => {

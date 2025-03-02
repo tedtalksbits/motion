@@ -11,7 +11,7 @@ import { Editor } from '@/components/dynamic-editor';
 
 export const DocumentViewer = ({ id }: { id: string }) => {
   const [blocks, setBlocks] = useState<Block[] | null>(null);
-  const { data: document, isLoading, isError } = useGetDocument(id);
+  const { data: document, isLoading, isError, error } = useGetDocument(id);
   const { mutateAsync: updateDocument } = useUpdateDocument();
   const debouncedBlocks = useDebounce(blocks, 1000);
 
@@ -22,7 +22,7 @@ export const DocumentViewer = ({ id }: { id: string }) => {
   }, [debouncedBlocks, id, updateDocument]);
 
   if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error loading document</div>;
+  if (isError) return <div>Error loading document {error.message}</div>;
   if (!document) return <div>Document not found</div>;
 
   return (
